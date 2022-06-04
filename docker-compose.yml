@@ -11,6 +11,10 @@ services:
         - '3306:3306'
     expose:
       - '3306'
+  es:
+    image: elasticsearch:7.10.1
+    ports:
+      - "9200:9200"
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
@@ -20,6 +24,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - es
     links:
       - db
     environment:
@@ -28,5 +33,8 @@ services:
       DB_HOST: db
       DB_PORT: 3306
       DB_POOL: 5
+      ELASTIC_HOST: "es"
+      ELASTIC_PORT: "9200"
 volumes:
   db:
+  es:

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :applications, param: :access_token do
     resources :chats, param: :number do
-      resources :messages, param: :message_id
+      resources :messages, param: :message_id do
+        collection do
+          get 'search'
+        end
+      end
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -47,6 +47,10 @@ class MessagesController < ApplicationController
     @chat.save
   end
 
+  def search
+    render json: Message.search({ content: params[:content], chat_id: @chat.id })
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chat
