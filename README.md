@@ -1,24 +1,21 @@
-# README
+# Chat App Backend Challenge - Instabug
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Requirements
+    - Docker
+    - Docker-compose
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Start App:
+    1.   Clone Repository
+    ```bash
+            git clone https://github.com/markRefaat/chatAppInstabug.git
+    ```
+    2.   Run App 
+    ```bash
+            cd chatAppInstabug
+            docker-composer up
+    ```
+    3.   Make sure services are running by visiting
+        - http://0.0.0.0:3000
+        
+    4. Apis documentation
+        Import postman api collection - file (ChatAppInstabug DEV.postman_collection.json)
